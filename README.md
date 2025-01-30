@@ -1,3 +1,3 @@
 # meengi-site
 
-Personal webiste
+Personal webisite
