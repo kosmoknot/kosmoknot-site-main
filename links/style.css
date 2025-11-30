@@ -15,6 +15,7 @@ html {
     border-top: 2px solid var(--normaltext);
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    height: 100%;
 }
 
 body {
@@ -39,6 +40,10 @@ body {
     -ms-hyphens: auto;
     -webkit-hyphens: auto;
     hyphens: auto;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
 
 time{
@@ -119,6 +124,7 @@ textarea{
     margin-left: auto;
     margin-right: auto;
     text-align: left;
+    flex: 1 0 auto;
 }
 
 .index_text{
@@ -254,6 +260,7 @@ summary{
 footer {
     width: 100%;
     background-color: var(--backgroundLight);
+    margin-top: auto;
 }
 
 code{
@@ -591,9 +598,19 @@ canvas{
 /* ————————————————————–
   Tree core styles
 */
+.tree-container {
+    background: linear-gradient(145deg, var(--backgroundLight), var(--background));
+    border: 1px solid var(--backgroundHighlight);
+    border-radius: 20px;
+    padding: 25px 30px;
+    margin-top: 30px;
+    box-shadow: inset 0 0 25px var(--background);
+}
+
 .tree {
-    margin: 1em;
     list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 .tree a {
@@ -615,23 +632,20 @@ canvas{
 }
 
 .TreeTopLevel{
-    background-color: var(--backgroundHighlight);
+    background-color: transparent;
 }
 
-/* ————————————————————–
-  Tree rows
-*/
 .tree li {
-    line-height: 1.2;
+    line-height: 1.4;
     position: relative;
-    padding: 0 0 1em 1em;
+    padding: 0 0 1em 1.75em;
     list-style: none;
 }
 
 .tree ul li {
-    padding: 1em 0 0 1em;
+    padding: 0.8em 0 0.2em 1.75em;
     list-style: none;
-    margin-left: -40px;
+    margin-left: 0;
 }
 
 .tree>li:last-child {
@@ -639,68 +653,63 @@ canvas{
     list-style: none;
 }
 
-/* ————————————————————–
-  Tree labels
-*/
 .tree_label {
     position: relative;
-    display: inline-block;
-}
-
-label.tree_label {
-    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px;
+    border-radius: 10px;
+    background: var(--backgroundHighlight);
+    border: 1px solid var(--backgroundLightest);
+    transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
 }
 
 label.tree_label:hover {
+    border-color: var(--textdecor);
+    background: var(--backgroundLighter);
+    transform: translateX(4px);
     color: var(--textdecor);
 }
 
-/* ————————————————————–
-  Tree expanded icon
-*/
 label.tree_label:before {
-    background: var(--backgroundLighter);
-    color: var(--normaltext);
-    position: relative;
-    z-index: 1;
-    float: left;
-    margin: 0 1em 0 -2em;
-    width: 1em;
-    height: 1em;
-    border-radius: 1em;
+    background: var(--backgroundLightest);
+    color: var(--textdecor);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 8px;
     content: '+';
-    text-align: center;
-    line-height: .9em;
+    font-weight: bold;
+    transition: transform 0.2s ease, background 0.2s ease;
 }
 
 :checked~label.tree_label:before {
     content: '–';
+    transform: rotate(180deg);
 }
 
-/* ————————————————————–
-  Tree branches
-*/
 .tree li:before {
     position: absolute;
     top: 0;
-    bottom: 0;
-    left: -.5em;
+    bottom: -0.2em;
+    left: 0.55em;
     display: block;
     width: 0;
-    border-left: 1px solid var(--backgroundLighter);
+    border-left: 2px dashed var(--backgroundLightest);
     content: "";
 }
 
 .tree_label:after {
     position: absolute;
-    top: 0;
-    left: -1.5em;
+    top: 1em;
+    left: -0.55em;
     display: block;
-    height: 0.5em;
-    width: 1em;
-    border-bottom: 1px solid var(--backgroundLighter);
-    border-left: 1px solid var(--backgroundLighter);
-    border-radius: 0 0 0 .3em;
+    height: 0;
+    width: 0.8em;
+    border-bottom: 2px dashed var(--backgroundLightest);
     content: '';
 }
 
@@ -709,14 +718,7 @@ label.tree_label:after {
 }
 
 :checked~label.tree_label:after {
-    border-radius: 0 .3em 0 0;
-    border-top: 1px solid var(--backgroundLighter);
-    border-right: 1px solid var(--backgroundLighter);
-    border-bottom: 0;
-    border-left: 0;
-    bottom: 0;
-    top: 0.5em;
-    height: auto;
+    border: 0;
 }
 
 .tree li:last-child:before {

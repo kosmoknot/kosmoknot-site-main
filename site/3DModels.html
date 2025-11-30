@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Digital garden of kosmoknot">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>kosmoknot - 3DModels </title>
+    <link rel="icon" href="/links/images/icon.png" type="image/icon type">
+    <link href="/links/style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/links/script.js"></script>
+</head>
+<body>
+<div class="NavigList"><div class="NavigItem"><a href="3DModels.html">3DModels</a></div><div class="NavigItem"><a href="Gallery.html">Gallery</a></div><div class="NavigItem"><a href="index.html">index</a></div>
+<div class="NavigItem"><a href="Sitemap.html">Sitemap</a></div>
+</div>
+<div class="bodyContainer">
+<script src="../links/three/load_models.module.js"></script>
+<script type="module">
+import { load } from "../links/three/load_models.module.js";
+window.loadModel = loadModel;
+
+function loadModel() {
+    var name = document.getElementById("models");
+    if (name.value == 'mirror_assembly') {
+        load('models_show', '../links/images/projects/', 'mirror_assembly', -0.8, -0.8, -0.8, 0, 0, 0);
+    }
+    else {
+        load('models_show', '../links/images/projects/', 'inter_iit', -800, -800, -800, 0, 0, 0);
+    }
+}
+</script>
+
+<h1>3DModels</h1>
+<form>
+<label for="models">Choose a model:</label> <br>
+<select id="models" name="models">
+<option value="mirror_assembly">Mirror assembly</option>
+<option value="inter_iit">Ergonomic crutches</option>
+</select>
+<button type="button" id="sub_button" name="submit" onclick="loadModel();">Load</button>
+<p style="font-size:16px;">(Loading might be slow depending on your RAM and netspeed)</p>
+</form>
+<canvas id="models_show"></canvas>
+
+
+</div>
+<footer>
+    <div class="footerContainer">
+        <div class="footer">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img id="cc" alt="Creative Commons License" src="/links/images/creative_commons_min.webp" />
+            </a>
+            <a rel="meengi" href="https://github.com/kosmoknot/meengi">
+                <img id="meengi" src="/links/images/meengi_light.png" />
+            </a>
+            <a rel="github" href="https://github.com/kosmoknot/meengi-site">
+                <img id="git" src="/links//images/github.webp" />
+            </a>
+            <a rel="neocities" href="https://neocities.org/site/kosmoknot">
+                <img id="neo" src="/links/images/neocities.webp" />
+            </a>
+            <a rel="mastodon" href="https://mas.to/@kosmoknot">
+                <img id="masto" src="/links/images/mastadon.png" />
+            </a>
+        </div>
+        <div class="footer_text">
+            <p>KosmoKnot Ⓒ 2022 — BY-NC-SA 4.0</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

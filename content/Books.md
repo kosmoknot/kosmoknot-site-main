@@ -72,6 +72,10 @@ A collection of short stories that explore various emotions a man feels when the
 I picked up the book during my Murakami binge because Drive my car was recently released (and I was excited to see Murakami's story transform from pages to a movie). Samsa in love is probably the most unique and touching story, but Men without women (the short story named after the title of book, or vice versa) was also quite enduring.
 $logsItemEnd()$
 
+$logsBooksItemStart(A Game of Thrones Book 1,George R. R. Martin,English,1996,24/04/2023,9)$
+A more satisfying and engaging read than I had expected it to be. The book is far more detailed—as it should be—compared to the show but is also more raw and brutal in its tone. The theme of entitled lords who play games at the expense of common folks is far more apparent.
+$logsItemEnd()$
+
 
 $logsListEnd()$
 

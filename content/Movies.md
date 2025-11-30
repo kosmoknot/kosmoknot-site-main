@@ -311,5 +311,80 @@ $logsMoviesItemStart(Pestonjee,Vijaya Mehta,Hindi,1988,10-3-2023,9)$
 The film explores times gone by with a sense of longing and melancholy. It starts with a simple message of finding personal happiness and comes to it while teasing but never indulging in multiple cinema tropes. It's not only progressive for 1988 but even for today. This liberal undertone combined with parsi characters and decade of the 1950s creates a beautiful amalgamation that is truly riveting. I loved the theme, characters, direction, costumes and attention to detail. Everything about it feels well crafted to near perfection.
 $logsItemEnd()$
 
+$logsMoviesItemStart(White Lotus S01,Mike White,English,2021,06-02-2023,8)$
+Slow-burn resort satire that stayed sharp throughout the season.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Inside Job,Shion Takeuchi,English,2021,24-03-2023,7)$
+Had a good humor and an unique identity. Maybe could have grown into something better.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Modern Family,Christopher Lloyd / Steven Levitan,English,2009,24-02-2023,7.5)$
+It's a comfort binge show with an occasional innovation.
+$logsItemEnd()$
+
+$logsMoviesItemStart(The Whole Story,??,Silent,2023,27-03-2023,8)$
+My first silent play. Used music to emphasize moments and emotions. Hand gestures were also utilised to convey crucial meaning. Overall only a few minutes felt like idk what is happening. The concept was about labour exploitation which was handled artfully and quite intelligently
+$logsItemEnd()$
+
+$logsMoviesItemStart(Bhumika,??,Marathi,2023,03-04-2023,7)$
+A play based on the psychological downfall of 3 people. One actor in the 1950s who killed himself on stage and another who wanted to follow him and become better than him and a psychologist who is studying the new actor and aiding his demise. The sound was good, the stage was minimal and the acting was adequate. I felt they revealed too much too early and spoiled the ending in a way but it still managed to maintain a healthy balance of intrigue and information.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Ava,Sadaf Foroughi,Persian,2017,07-04-2023,7)$
+$logsItemEnd()$
+
+$logsMoviesItemStart(The Great Dictator,Charlie Chaplin,English,1940,09-04-2023,8)$
+The comedy had few new things to offer even after so many years. I especially loved how they used German. The ending was very unexpected and the speech is quite rightly regarded as legendary.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Jubilee,Vikramaditya Motwane,English/Hindi,2023,16-04-2023,8)$
+There were some places I would have liked the story to be a bit tighter but the overall ambiance of the show was on point. Some typical things like narration and deus ex machina felt very unneeded but that's ok ig.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Guardians of the Galaxy Vol. 3,James Gunn,English,2023,06-05-2023,7)$
+It was at least funny and good looking beneath all the mindless stupidity. It felt kinda irritating to see quality dip in the IIMB audi.
+$logsItemEnd()$
+
+$logsMoviesItemStart(The Marvelous Mrs. Maisel,Amy Sherman-Palladino,English,2017,27-05-2023,9)$
+I was very sceptical of it being good but it drew me in and introduced a lot of lovely characters. I especially liked Abe what a man.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Triangle of Sadness,Ruben Östlund,English/Swedish,2022,03-08-2023,8)$
+It was a deconstruction and analysis of a shift in status quo done really well. The drop in quality at IIMB audi was kinda irritating. It felt like a dissection of societal dynamics from a distance.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Oppenheimer,Christopher Nolan,English,2023,05-08-2023,8)$
+Spectacular and tightly told but light on emotional heft for me.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Panchayat,Deepak Kumar Mishra,Hindi,2020,10-08-2023,8)$
+A cosy village comfort watch.
+$logsItemEnd()$
+
+$logsMoviesItemStart(The Creator,Gareth Edwards,English,2023,01-10-2023,9)$
+An amazing sci-fi with an emotional core. The child actor did amazing work. The story was inspired in the right way with its own interpretation and the visuals were stunning. You can see the gears turning in their heads.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Veerappan,Ram Gopal Varma,Hindi,2016,28-09-2023,8)$
+Theme song was way too apt. They maintained a very balanced narrative which is quite hard considering it was about a very hated brigand.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Justice League: The Animated Series,Bruce Timm / Paul Dini,English,2001,01-11-2023,8)$
+Got boring towards the end, still better than any other DC movies.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Uncut Gems,Josh Safdie / Benny Safdie,English,2019,29-11-2023,8)$
+Very intense and high stake drama which keeps you on the edge. Somewhat unpredictable twists and turns are elevated by use of sounds, short cuts and acting. There was a sense unease throughout the movie.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Animal,Sandeep Reddy Vanga,Hindi,2023,03-12-2023,2)$
+It's like a 8yoe wrote the story and people took it seriously.
+$logsItemEnd()$
+
+$logsMoviesItemStart(Blue Eye Samurai,Amber Noizumi / Michael Green,English/Japanese,2023,??-??-2023,8)$
+Very stunning visuals and enthralling storytelling but ending was weak.
+$logsItemEnd()$
+
 $logsListEnd()$
 $Footer()$

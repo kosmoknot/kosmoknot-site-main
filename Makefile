@@ -1,76 +1,20 @@
-# Compiler settings - Can be customized.
-CC = g++
-INCLD = -I ./code/include/
-CXXFLAGS = -std=c++17 -Wall $(INCLD) -g -ggdb
-LDFLAGS = -g -ggdb
+MEENGI_DIR := meengi
+MEENGI_BIN := $(MEENGI_DIR)/meengi
 
-# Makefile settings - Can be customized.
-APPNAME = meengi
-EXT = .cpp
-SRCDIR = ./code/src
-OBJDIR = ./code/bin
-DEPDIR = ./code/bin
-TESTDIR = ./tests
-TESTBIN = meengi_tests
+.PHONY: all meengi site clean clean-site clean-meengi
 
-############## Do not change anything from here downwards! #############
-SRC = $(wildcard $(SRCDIR)/*$(EXT))
-SRC_NO_MAIN = $(filter-out $(SRCDIR)/main$(EXT), $(SRC))
-OBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
-DEP = $(OBJ:$(OBJDIR)/%.o=$(DEPDIR)/%.d)
-TEST_SRCS = $(wildcard $(TESTDIR)/*$(EXT))
-# UNIX-based OS variables & settings
-RM = rm
-DELOBJ = $(OBJ)
-# Windows OS variables & settings
-DEL = del
-EXE = .exe
-WDELOBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)\\%.o)
+all: site
 
-########################################################################
-####################### Targets beginning here #########################
-########################################################################
+meengi:
+	$(MAKE) -C $(MEENGI_DIR)
 
-all: $(APPNAME)
-# Builds the app
-$(APPNAME): $(OBJ)
-	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+site: meengi
+	./$(MEENGI_BIN)
 
-$(TESTBIN): $(TEST_SRCS) $(SRC_NO_MAIN)
-	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+clean-site:
+	rm -f site/*.html
 
-test: $(TESTBIN)
-	./$(TESTBIN)
+clean-meengi:
+	$(MAKE) -C $(MEENGI_DIR) clean
 
-# Creates the dependecy rules
-%.d: $(SRCDIR)/%$(EXT)
-	@$(CPP) $(CFLAGS) $< -MM -MT $(@:%.d=$(OBJDIR)/%.o) >$@
-
-# Includes all .h files
--include $(DEP)
-
-# Building rule for .o files and its .c/.cpp in combination with all .h
-$(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
-	$(CC) $(CXXFLAGS) -o $@ -c $<
-
-################### Cleaning rules for Unix-based OS ###################
-# Cleans complete project
-.PHONY: clean
-clean:
-	$(RM) $(DELOBJ) $(DEP) $(APPNAME) $(TESTBIN)
-
-# Cleans only all files with the extension .d
-.PHONY: cleandep
-cleandep:
-	$(RM) $(DEP)
-
-#################### Cleaning rules for Windows OS #####################
-# Cleans complete project
-.PHONY: cleanw
-cleanw:
-	$(DEL) $(WDELOBJ) $(DEP) $(APPNAME)$(EXE) $(TESTBIN)$(EXE)
-
-# Cleans only all files with the extension .d
-.PHONY: cleandepw
-cleandepw:
-	$(DEL) $(DEP)
+clean: clean-site clean-meengi
