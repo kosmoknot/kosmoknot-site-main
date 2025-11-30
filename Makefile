@@ -10,11 +10,15 @@ EXT = .cpp
 SRCDIR = ./code/src
 OBJDIR = ./code/bin
 DEPDIR = ./code/bin
+TESTDIR = ./tests
+TESTBIN = meengi_tests
 
 ############## Do not change anything from here downwards! #############
 SRC = $(wildcard $(SRCDIR)/*$(EXT))
+SRC_NO_MAIN = $(filter-out $(SRCDIR)/main$(EXT), $(SRC))
 OBJ = $(SRC:$(SRCDIR)/%$(EXT)=$(OBJDIR)/%.o)
 DEP = $(OBJ:$(OBJDIR)/%.o=$(DEPDIR)/%.d)
+TEST_SRCS = $(wildcard $(TESTDIR)/*$(EXT))
 # UNIX-based OS variables & settings
 RM = rm
 DELOBJ = $(OBJ)
@@ -32,6 +36,12 @@ all: $(APPNAME)
 $(APPNAME): $(OBJ)
 	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
 
+$(TESTBIN): $(TEST_SRCS) $(SRC_NO_MAIN)
+	$(CC) $(CXXFLAGS) -o $@ $^ $(LDFLAGS)
+
+test: $(TESTBIN)
+	./$(TESTBIN)
+
 # Creates the dependecy rules
 %.d: $(SRCDIR)/%$(EXT)
 	@$(CPP) $(CFLAGS) $< -MM -MT $(@:%.d=$(OBJDIR)/%.o) >$@
@@ -47,7 +57,7 @@ $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
 # Cleans complete project
 .PHONY: clean
 clean:
-	$(RM) $(DELOBJ) $(DEP) $(APPNAME)
+	$(RM) $(DELOBJ) $(DEP) $(APPNAME) $(TESTBIN)
 
 # Cleans only all files with the extension .d
 .PHONY: cleandep
@@ -58,7 +68,7 @@ cleandep:
 # Cleans complete project
 .PHONY: cleanw
 cleanw:
-	$(DEL) $(WDELOBJ) $(DEP) $(APPNAME)$(EXE)
+	$(DEL) $(WDELOBJ) $(DEP) $(APPNAME)$(EXE) $(TESTBIN)$(EXE)
 
 # Cleans only all files with the extension .d
 .PHONY: cleandepw
