@@ -3,6 +3,9 @@
 #include "PageRenderer.h"
 #include "GeneratorConfig.h"
 
+using std::string;
+using std::vector;
+
 Template::Template(const vector<int> &argOrder, const vector<string> &contentSalami) : ArgsOrder(argOrder), ContentSalami(contentSalami)
 {
 }

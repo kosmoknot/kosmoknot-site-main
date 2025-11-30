@@ -1,7 +1,10 @@
 #include "ShortHandParser.h"
 
-ShortHandParser::ShortHandParser() {
-};
+using std::regex;
+using std::string;
+using std::regex_replace;
+
+ShortHandParser::ShortHandParser() {};
 
 string ShortHandParser::Parse(const string &iLine)
 {
@@ -20,13 +23,10 @@ string ShortHandParser::Parse(const string &iLine)
     // Replace code block (using triple backticks for preformatted text)
     modifiedLine = regex_replace(modifiedLine, regex("```(.*?)```"), "<pre>$1</pre>");
 
-    // Replace list items (starts with a hyphen followed by space)
-    // modifiedLine = regex_replace(modifiedLine, regex("-\\s*(.*)"), "<li>$1</li>");
-
     // Replace // with <br><br>
     modifiedLine = regex_replace(modifiedLine, regex("/nl"), "<br><br>");
 
-    // Replace /hline with <div class="hrcls"><hr></ div>
+    // Replace /hline with <div class=\"hrcls\"><hr></ div>
     modifiedLine = regex_replace(modifiedLine, regex("/hline"), "<div class=\" hrcls\"><hr></ div>");
 
     return modifiedLine; // Return the modified line with HTML tags

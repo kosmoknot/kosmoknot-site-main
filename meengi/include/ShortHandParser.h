@@ -2,11 +2,9 @@
 #include <string>
 #include <regex>
 
-using namespace std;
-
 class ShortHandParser
 {
 public:
     ShortHandParser();
-    string Parse(const string &iLine);
+    std::string Parse(const std::string &iLine);
 };

@@ -1,2 +1,7 @@
 code/bin/*.o
-meengi
+meengi/bin/
+meengi/meengi
+meengi/meengi_tests
+meengi/tests/fixtures/basic/site/*.html
+meengi/tests/fixtures/basic/site/keep.txt
+meengi/tests/fixtures/basic/warnings.txt

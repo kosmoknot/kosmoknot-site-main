@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Digital garden of kosmoknot">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+    <title>kosmoknot - Quizzes </title>
+    <link rel="icon" href="/links/images/icon.png" type="image/icon type">
+    <link href="/links/style.css" rel="stylesheet" type="text/css" media="all">
+    <script src="/links/script.js"></script>
+</head>
+<body>
+<div class="NavigList"><div class="NavigItem"><a href="Quizzes.html">Quizzes</a></div><div class="NavigItem"><a href="Projects.html">Projects</a></div><div class="NavigItem"><a href="index.html">index</a></div>
+<div class="NavigItem"><a href="Sitemap.html">Sitemap</a></div>
+</div>
+<div class="bodyContainer">
+<script src="/links/quizes.js"></script>
+<h1>Quizzes</h1>
+<div class ="article"><p>
+As a part of the college quizzing team I made a few quizzes for practice, here are some of them. <br>
+
+<div class="hrcls">
+<hr>
+</div>
+<br>
+<div class="quizContainer">
+Select a Quiz:
+<select class="choose_content" name="quiz" id="quiz_name">
+<option value="Astronomy Quiz">Astronomy</option>
+<option value="Sci-Tech Quiz">Sci-Tech</option>
+<option value="General Quiz">General</option>
+</select>
+<br> <br>
+<button class="button_submit" onclick="reset();generateQuiz();">Go!</button>
+</div>
+<div id="quiz">
+<h2 id="qz_name"></h2><br>
+<div class="question">
+<b class="sub_mid" id="question_no">0</b><br>
+<p class="sub_left" id="question_name" style="text-align: justify;">Question here</p>
+<img id="question_image" style="width:100%" src="">
+<button class="button_submit" id='show_answer' onclick="showAnswer()">Show Answer</button>
+<div id="answer">
+<p id="answer_name">dummy answer</p>
+</div>
+<div class="sub_mid">
+<button class="button_submit" id='back' onclick="backQst()">back</button> <button class="button_submit" id='next' onclick="nextQst()">Next</button>
+</div>
+</div>
+</div>
+
+</p></div>
+</div>
+</body>
+<footer>
+    <div class="footerContainer">
+        <div class="footer">
+            <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img id="cc" alt="Creative Commons License" src="/links/images/creative_commons_min.webp" />
+            </a>
+            <a rel="meengi" href="https://github.com/kosmoknot/meengi">
+                <img id="meengi" src="/links/images/meengi_light.png" />
+            </a>
+            <a rel="github" href="https://github.com/kosmoknot/meengi-site">
+                <img id="git" src="/links//images/github.webp" />
+            </a>
+            <a rel="neocities" href="https://neocities.org/site/kosmoknot">
+                <img id="neo" src="/links/images/neocities.webp" />
+            </a>
+            <a rel="mastodon" href="https://mas.to/@kosmoknot">
+                <img id="masto" src="/links/images/mastadon.png" />
+            </a>
+        </div>
+        <div class="footer_text">
+            <p>KosmoKnot Ⓒ 2022 — BY-NC-SA 4.0</p>
+        </div>
+    </div>
+</footer>
+
+</html>

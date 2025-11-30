@@ -1,11 +1,17 @@
 #include "FileHelpers.h"
 #include "GeneratorConfig.h"
 #include <stdlib.h>
+#include <cctype>
 #include <filesystem>
+#include <exception>
+
+using std::string;
+using std::vector;
+using std::ios;
 
 vector<string> GetLinesFromFile(const string &path, bool ignore_comments)
 {
-    fstream file;
+    std::fstream file;
     vector<string> ret = vector<string>();
     file.open(path.c_str(), ios::in);
     if (file.is_open())
@@ -87,7 +93,7 @@ vector<string> TokenizeBetween(const string &input, const string &tokens)
 
 void warn(const string &warning)
 {
-    ofstream warningfile;
+    std::ofstream warningfile;
     warningfile.open(GetGeneratorConfig().warningsFile, ios::app);
     warningfile << warning << '\n';
     warningfile.close();
@@ -100,11 +106,11 @@ bool toInt(const string &str, int &out)
 
     try
     {
-        val = stoi(str);
+        val = std::stoi(str);
     }
-    catch (std::exception *e)
+    catch (const std::exception &e)
     {
-        warn("Caught Failure in toInt while converting  " + str);
+        warn("Caught Failure in toInt while converting " + str + ": " + e.what());
         success = false;
     }
     if (success)
@@ -116,7 +122,7 @@ bool toInt(const string &str, int &out)
 
 void ClearPreviousWarnings()
 {
-    ofstream warningfile;
+    std::ofstream warningfile;
     warningfile.open(GetGeneratorConfig().warningsFile, std::ios::trunc);
     warningfile.close();
 }
@@ -183,4 +189,17 @@ size_t Max(const vector<int> &vec)
             ret = val;
     }
     return ret + 1;
+}
+
+std::string Trim(const std::string &input)
+{
+    if (input.empty())
+        return input;
+    size_t start = 0;
+    size_t end = input.size();
+    while (start < input.size() && std::isspace(static_cast<unsigned char>(input[start])))
+        start++;
+    while (end > start && std::isspace(static_cast<unsigned char>(input[end - 1])))
+        end--;
+    return input.substr(start, end - start);
 }

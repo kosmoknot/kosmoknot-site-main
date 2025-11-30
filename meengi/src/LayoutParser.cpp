@@ -3,6 +3,8 @@
 #include "FileHelpers.h"
 #include "GeneratorConfig.h"
 
+using std::string;
+
 Node::Node(std::string name, Node *parent) : name(name), parent(parent)
 {
     children = std::vector<Node *>();
@@ -91,7 +93,7 @@ LayoutParser::LayoutParser(const std::string &path)
         }
         if (isParent)
         {
-            string name = ExtractBetween(line, "##", "\n");
+            string name = Trim(ExtractBetween(line, "##", "\n"));
             Node *current = NodeMap[name];
 
             if (current == nullptr)
@@ -117,7 +119,7 @@ LayoutParser::LayoutParser(const std::string &path)
         }
         else if (isChild)
         {
-            string name = ExtractBetween(line, "#", "\n");
+            string name = Trim(ExtractBetween(line, "#", "\n"));
 
             auto current = NodeMap[name];
 
