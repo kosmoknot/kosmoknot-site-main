@@ -1,4 +1,5 @@
 {
+    "version": "2.0.0",
     "tasks": [
         {
             "type": "cppbuild",
@@ -14,13 +15,29 @@
             "group": {
                 "kind": "build",
                 "isDefault": true
+            }
+        },
+        {
+            "type": "cppbuild",
+            "label": "Make tests",
+            "command": "make",
+            "args": [
+                "test"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}"
             },
+            "problemMatcher": [
+                "$gcc"
+            ]
         },
         {
             "type": "cppbuild",
             "label": "Make clean",
             "command": "make",
-            "args": ["clean"],
+            "args": [
+                "clean"
+            ],
             "options": {
                 "cwd": "${workspaceFolder}"
             },
@@ -30,8 +47,7 @@
             "group": {
                 "kind": "none",
                 "isDefault": true
-            },
-        }
-    ],
-    "version": "2.0.0"
+            }
+        },
+    ]
 }
