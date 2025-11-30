@@ -27,11 +27,13 @@ $$items$$
 
 //Use TreeMapPartial to get treemap starting from current node
 # $TreeMap(map)
+<div class="tree-container">
 <ul class="tree">
 <li>
 $$map$$
 </li>
 </ul>
+</div>
 #
 
 //This is the top level title can be customised to look different
@@ -78,7 +80,6 @@ $NavigList()$
 
 # $Footer():
 </div>
-</body>
 <footer>
     <div class="footerContainer">
         <div class="footer">
@@ -104,6 +105,7 @@ $NavigList()$
     </div>
 </footer>
 
+</body>
 </html>
 #
 
